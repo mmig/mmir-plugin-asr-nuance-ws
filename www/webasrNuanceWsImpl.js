@@ -410,8 +410,8 @@ define(['mmirf/mediaManager', 'mmirf/configurationManager', 'mmirf/languageManag
 		}
 
 		var serviceUrl = config.getString( [_pluginName, "baseUrl"], 'wss://httpapi.labs.nuance.com/v1' ) +
-		 										"?app_id=" + configurationManager.getString( [_pluginName, "appId"] ) +
-												"&algorithm=key&app_key=" + configurationManager.getString( [_pluginName, "appKey"] );
+		 										"?app_id=" + config.getString( [_pluginName, "appId"] ) +
+												"&algorithm=key&app_key=" + config.getString( [_pluginName, "appKey"] );
 		webSocket = new WebSocket(serviceUrl);
 		webSocket.binaryType = 'arraybuffer';
 
