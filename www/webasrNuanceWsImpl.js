@@ -191,9 +191,11 @@ define(['mmirf/mediaManager', 'mmirf/configurationManager', 'mmirf/languageManag
 	 */
 	mediaManager.on('webaudioinputstarted', function(input, audio_context, recorder){
 		_recorder = recorder;
-		var hasListener = recorder.hasListeners("onchunkstored");
-		if(!hasListener){
-			recorder.on('onchunkstored', onAudioChunkStored);
+		// var hasListener = recorder.hasListeners("onchunkstored");
+		// if(!hasListener){
+		//	recorder.on('onchunkstored', onAudioChunkStored);
+		if(!recorder.onchunkstored){
+			recorder.onchunkstored = onAudioChunkStored;
 		}
 	});
 
