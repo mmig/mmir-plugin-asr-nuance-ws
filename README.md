@@ -1,6 +1,6 @@
 # mmir-plugin-asr-nuance-web
 
-Cordova plugin for the MMIR framework that allows Automatic Speech Recognition (ASR) via Nuance web services
+Cordova plugin for the MMIR framework that allows Automatic Speech Recognition (ASR) via Nuance WebSockets services (MIX)
 
 ## configure CSP
 
@@ -23,9 +23,9 @@ Cordova plugin for the MMIR framework that allows Automatic Speech Recognition (
 		"appKey": <the secret app key>,
 		"baseUrl": "https://dictation.nuancemobility.net/NMDPAsrCmdServlet/dictation"
 	},
-	
+
 	....
-	
+
 	"mediaManager": {
     	"plugins": {
     		"browser": [
