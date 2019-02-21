@@ -7,6 +7,7 @@
 var _id = "mmir-plugin-asr-nuance-ws";
 var _paths = {
   "mmir-plugin-asr-nuance-ws/webasrNuanceWsImpl": "www/webasrNuanceWsImpl.js",
+  "mmir-plugin-asr-nuance-ws/webasrNuanceWsImplCompat": "www/alt/webasrNuanceWsImplCompat.js",
   "mmir-plugin-asr-nuance-ws": "www/webasrNuanceWsImpl.js"
 };
 var _workers = [];

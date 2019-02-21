@@ -10,11 +10,11 @@ import { MediaManagerPluginEntry } from 'mmir-lib';
  * {@link MediaManagerWebInput#recognize} or {@link MediaManagerWebInput#startRecord}
  * (if specified via the options, values will override configuration settings).
  */
-export interface ASRNuanceWSConfigEntry {
-  asrNuanceWs?: ASRNuanceWSConfig;
+export interface PluginConfig {
+  asrNuanceWs?: PluginConfigEntry;
 }
 
-export interface ASRNuanceWSConfig extends MediaManagerPluginEntry {
+export interface PluginConfigEntry extends MediaManagerPluginEntry {
   /** OPTIONAL
    * @default "speex" (see mmir-plugin-encoder-core) */
   encoder?: 'speex'; // TODO (enable) 'wav'
@@ -39,7 +39,7 @@ export interface ASRNuanceWSConfig extends MediaManagerPluginEntry {
   //  * Nuance encourages you to pass this header whenever you can -- and as accurately as possible.
   //  */
   // source?: 'SpeakerAndMicrophone' | 'HeadsetInOut' | 'HeadsetBT' | 'HeadPhone' | 'LineOut';
-  
+
   // /** TODO NOT IMPLEMENTED for encoder (if supported by encoder): */
   // rate?: /*'wav': */    8000 | 16000 | 22000 |
   //        /*'speex': */  8000 | 'nw' | 11025 | 'sw' | 16000 | 'wb';
