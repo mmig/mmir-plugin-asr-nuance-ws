@@ -252,31 +252,28 @@ define(['mmirf/mediaManager', 'mmirf/configurationManager', 'mmirf/languageManag
 			}
 		}else{
 			try{//FIXME this should not be necessary...
-				if (typeof data === 'string' || data instanceof String){
-					//console.log("ws dosend string : "+msg);
-					webSocket.send(data);
-				} else if(typeof data === 'ArrayBuffer' || data instanceof ArrayBuffer) {
-					//console.log("ws dosend ArrayBuffer");
-					webSocket.send(data);
-				} else if(typeof data === 'Array' || data instanceof Array){
+				if(data instanceof Array){
 					//console.log("ws dosend buffers from a array");
 					data.forEach(function(typedArray){
-						doSend(typedArray.buffer);
-	                });
+						webSocket.send(typedArray.buffer);
+					});
 				} else if(data !== undefined){
-						mediaManager._log.warn("buffer is an unknown type");
-						doSend(data);
+						webSocket.send(data);
 
-				} else{
-					//console.log("skip data sending -> undefined");
+						// if(data instanceof Blob) _recorder.constructor.forceDownload(data, 'speechAsr_'+(++fileNameCounter)+'.speex');
+
+				} else if(mediaManager._log.isDebug()){
+					mediaManager._log.log("skip data sending -> undefined");
 				}
 				//webSocket.send(msg);
 			} catch(err){
-				mediaManager._log.error("Error during send", err);
+				mediaManager._log.error(_pluginName, 'Error during send', err);
 			}
 		}
 
 	};
+
+	// var fileNameCounter = 0;
 
 	/**
 	 * helper function that sends the needed text messages to set up the nuance asr service
