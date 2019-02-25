@@ -13,10 +13,18 @@ module.exports = {
     "appKey",
     /** credentials application ID (MUST be set via configuration or options) */
     "appId",
-    /** OPTIONAL
-     * @default "speex" (see mmir-plugin-encoder-core) */
-    "encoder"
+    /** OPTIONAL (see mmir-plugin-encoder-core)
+     * @default "speex" */
+    "encoder",
+    /** the plugin/module which which will load/use this specific ASR implementation
+     * @default mmir-plugin-encoder-core.js
+     */
+    "mod"
   ],
+  defaultValues: {
+    encoder: "speex",
+    mod: "mmir-plugin-encoder-core.js"
+  },
   remoteUrls: {
     baseUrl: "wss://httpapi.labs.nuance.com/v1"
   }

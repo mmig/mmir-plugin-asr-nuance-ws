@@ -15,8 +15,14 @@ export interface PluginConfig {
 }
 
 export interface PluginConfigEntry extends MediaManagerPluginEntry {
-  /** OPTIONAL
-   * @default "speex" (see mmir-plugin-encoder-core) */
+
+  /** the plugin/module which which will load/use this specific ASR implementation
+   * @default mmir-plugin-encoder-core.js
+   */
+  mod: 'mmir-plugin-encoder-core.js';
+
+  /** OPTIONAL (see mmir-plugin-encoder-core)
+   * @default "speex" */
   encoder?: 'speex'; // TODO (enable) 'wav'
   /** credentials application ID (MUST be set via configuration or options) */
   appId?: string;
