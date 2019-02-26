@@ -17,11 +17,10 @@ Cordova plugin for the MMIR framework that allows Automatic Speech Recognition (
 
 ...
 
-	"nuanceWebAudioInput": {
+	"asrNuanceWs": {
 		"encoder": "speexEncoder",
 		"appId": <the app ID>,
-		"appKey": <the secret app key>,
-		"baseUrl": "https://dictation.nuancemobility.net/NMDPAsrCmdServlet/dictation"
+		"appKey": <the secret app key>
 	},
 
 	....
@@ -30,12 +29,12 @@ Cordova plugin for the MMIR framework that allows Automatic Speech Recognition (
     	"plugins": {
     		"browser": [
     			...
-                {"ctx": "webn", "mod": "webAudioInput", "config": "webasrNuanceWsImpl"}
+                {"ctx": "webn", "mod": "webAudioInput", "config": "asrNuanceWs"}
                 ...
     		],
     		"cordova": [
     			...
-                {"ctx": "webn", "mod": "webAudioInput", "config": "webasrNuanceWsImpl"}
+                {"ctx": "webn", "mod": "webAudioInput", "config": "asrNuanceWs"}
                 ...
     		]
     	}

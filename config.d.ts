@@ -5,7 +5,7 @@ import { MediaManagerPluginEntry } from 'mmir-lib';
 
 /**
  * (optional) entry "asrNuanceWs" in main configuration.json
- * for settings of webasrNuanceWsImpl module.
+ * for settings of asrNuanceWs module.
  *
  * Some of these settings can also be specified by using the options argument
  * in the ASR functions of {@link MediaManagerWebInput}, e.g.
