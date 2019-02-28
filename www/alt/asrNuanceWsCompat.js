@@ -254,8 +254,10 @@
 	 * @memberOf NuanceWsWebAudioInputImpl#
 	 */
 	var onAudioChunkStored = function(){
-		_recorder.doEncode();
-		_recorder.doFinish();
+		if(!stopped){
+			_recorder.doEncode();
+			_recorder.doFinish();
+		}
 	};
 
 
