@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab-cos.b.dfki.de/mmir/mmir-plugin-asr-nuance-ws.git"
+    "url": "https://github.com/mmig/mmir-plugin-asr-nuance-ws.git"
   },
   "keywords": [
     "asr",
@@ -26,10 +26,10 @@
   "author": "russa",
   "license": "MIT",
   "dependencies": {
-    "mmir-plugin-encoder-speex": "git+https://gitlab-cos.b.dfki.de/mmir/mmir-plugin-encoder-speex.git"
+    "mmir-plugin-encoder-speex": "git+https://github.com/mmig/mmir-plugin-encoder-speex.git"
   },
   "peerDependencies": {
-    "mmir-lib": "git+https://gitlab-cos.b.dfki.de/mmir/dev_mmir-lib.git#develop/webpack"
+    "mmir-lib": "git+https://github.com/mmig/mmir-lib.git"
   },
   "cordova": {
     "id": "mmir-plugin-asr-nuance-ws",
@@ -38,7 +38,7 @@
   "engines": {
     "cordovaDependencies": {
       "1.0.0": {
-        "git+https://gitlab-cos.b.dfki.de/mmir/mmir-plugin-encoder-speex.git": ">=1.0.0"
+        "git+https://github.com/mmig/mmir-plugin-encoder-speex.git": ">=1.0.0"
       }
     }
   },
@@ -51,6 +51,6 @@
     }
   },
   "devDependencies": {
-    "mmir-plugin-exports": "git+https://gitlab-cos.b.dfki.de/mmir/mmir-plugin-exports.git"
+    "mmir-plugin-exports": "git+https://github.com/mmig/mmir-plugin-exports.git"
   }
 }
