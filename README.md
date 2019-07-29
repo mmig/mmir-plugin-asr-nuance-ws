@@ -1,4 +1,4 @@
-# mmir-plugin-asr-nuance-web
+# mmir-plugin-asr-nuance-ws
 
 Cordova plugin for the MMIR framework that allows Automatic Speech Recognition (ASR) via Nuance WebSockets services (MIX)
 
