@@ -192,12 +192,15 @@ define(['mmirf/mediaManager', 'mmirf/configurationManager', 'mmirf/languageManag
 	 * @memberOf NuanceWsWebAudioInputImpl#
 	 */
 	mediaManager.on('webaudioinputstarted', function(input, audio_context, recorder){
-		_recorder = recorder;
-		// var hasListener = recorder.hasListeners("onchunkstored");
-		// if(!hasListener){
-		//	recorder.on('onchunkstored', onAudioChunkStored);
-		if(!recorder.onchunkstored){
-			recorder.onchunkstored = onAudioChunkStored;
+
+		if(recorder){
+			_recorder = recorder;
+			// var hasListener = recorder.hasListeners("onchunkstored");
+			// if(!hasListener){
+			//	recorder.on('onchunkstored', onAudioChunkStored);
+			if(!recorder.onchunkstored){
+				recorder.onchunkstored = onAudioChunkStored;
+			}
 		}
 	});
 
@@ -680,12 +683,12 @@ define(['mmirf/mediaManager', 'mmirf/configurationManager', 'mmirf/languageManag
 		getPluginName: function(){
 			return _pluginName;
 		},
-		setCallbacks: function(successCallback, failureCallback, stopUserMedia, isIntermediateResults){
+		setCallbacks: function(successCallback, failureCallback, stopUserMedia, options){
 
 			textProcessor = successCallback;
 			currentFailureCallback = failureCallback;
 			closeMicFunc = stopUserMedia;
-			isUseIntermediateResults = isIntermediateResults;
+			isUseIntermediateResults = options.intermediate;
 		},
 		setLastResult: function(){
 			lastBlob = true;
